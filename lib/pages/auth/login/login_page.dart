@@ -8,7 +8,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final passwordController = TextEditingController();
-  final noTelpController = TextEditingController();
+  final emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
 
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: sPrimaryWhiteColor,
       body: Container(
         color: sPrimaryPinkPastelColor,
         child: SizedBox(
@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                                       hintText: "@email",
                                       icon: Icons.email,
                                       type: TextInputType.emailAddress,
-                                      controller: noTelpController,
+                                      controller: emailController,
                                   ),
                                   RoundedInputNumber(
                                     hintText: "Password",

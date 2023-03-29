@@ -1,16 +1,14 @@
 import 'package:samawa/import/main/all_import.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+class FormPassword extends StatefulWidget {
+  const FormPassword({Key? key}) : super(key: key);
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<FormPassword> createState() => _FormPasswordState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _FormPasswordState extends State<FormPassword> {
   final passwordController = TextEditingController();
   final retypePasswordController = TextEditingController();
-  final emailController = TextEditingController();
-  final telpController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +26,15 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Stack(
                   children: [
                     Upside(
-                      imgUrl: "assets/intro/register.png",
-                        height: size.height / 3.2
+                      imgUrl: "assets/intro/password.png",
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                        top: size.height / 2.9,
+                        top: size.height / 1.8,
                       ),
                       child: Container(
                         width: double.infinity,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(50),
@@ -45,32 +42,22 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                         ),
                         child: Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: size.width * 0.08,
-                                vertical: size.width * 0.04),
+                          height: size.height / 2,
+                            margin: EdgeInsets.only(
+                                right: size.width * 0.08,
+                                left: size.width * 0.08,
+                                top: size.width * 0.04),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 TitleAuth(
-                                  title: "REGISTER",
-                                  description: "Buat Akun untuk Melanjutkan",
+                                  title: "HALO",
+                                  description: "Masukkan Password Untuk Melanjutkan",
                                 ),
                                 Form(
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      RoundedInputNumber(
-                                        hintText: "@email",
-                                        type: TextInputType.emailAddress,
-                                        icon: Icons.email,
-                                        controller: emailController,
-                                      ),
-                                      RoundedInputNumber(
-                                        hintText: "No Telp",
-                                        type: TextInputType.number,
-                                        icon: Icons.phone,
-                                        controller: telpController,
-                                      ),
                                       RoundedInputNumber(
                                         hintText: "Password",
                                         isVisible: true,
@@ -87,31 +74,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                         text: "Lanjutkan",
                                         color: sPrimaryColor,
                                         press: () {
-                                          Get.to(FormPassword());
+                                          Get.to(InformationData());
                                         },
-                                      ),
-                                      RoundedButton(
-                                        logo: "assets/logos/google.png",
-                                        text: "Register With Google",
-                                        color: sPrimaryWhiteColor,
-                                        textColor: sPrimaryColor,
-                                        press: () {
-
-                                        },
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(top:  size.width * 0.02),
-                                        child: UnderPart(
-                                          title: "Already Has Account?",
-                                          navigatorText: "Login",
-                                          onTap: () {
-                                            Get.to(LoginPage());
-                                          },
-                                        ),
-                                      ),
-                                      UnderPart(
-                                        navigatorText: "Forgot password?",
-                                        onTap: () {},
                                       ),
                                     ],
                                   ),

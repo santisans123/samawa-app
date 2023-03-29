@@ -38,7 +38,7 @@ class _RoundedInputNumberState extends State<RoundedInputNumber> {
     return Container(
       margin: EdgeInsets.symmetric(vertical: size.height * 0.01),
       padding: EdgeInsets.symmetric(horizontal: size.width * 0.02),
-      width: size.width * 0.8,
+      width: double.infinity,
       decoration: BoxDecoration(
           color: sPrimaryWhiteColor,
           border: Border.all(color: sPrimaryLightGreyColor),
