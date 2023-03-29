@@ -1,8 +1,13 @@
 import 'package:samawa/import/main/all_import.dart';
 
 class Upside extends StatelessWidget {
-  Upside({Key? key, required this.imgUrl}) : super(key: key);
+  Upside({Key? key,
+    required this.imgUrl,
+    this.height
+  }) : super(key: key);
+
   final String imgUrl;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class Upside extends StatelessWidget {
             child: Image.asset(
               imgUrl,
               alignment: Alignment.topCenter,
-              height: size.height / 2,
+              height: height != null ? height : size.height / 2,
               fit: BoxFit.contain,
             ),
           ),

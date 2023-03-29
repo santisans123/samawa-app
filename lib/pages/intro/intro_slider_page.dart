@@ -12,7 +12,7 @@ class _IntroSliderViewState extends State<IntroSliderPage> {
   @override
   Widget build(BuildContext context) {
     return IntroSlider(
-      onDonePress: () => Get.to(Login()),
+      onDonePress: () => Get.to(LoginPage()),
       slides: slides,
       colorActiveDot: sPrimaryColor,
     );

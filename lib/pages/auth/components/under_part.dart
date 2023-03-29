@@ -16,7 +16,7 @@ class UnderPart extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      margin: EdgeInsets.only(top: size.height * 0.02),
+      margin: EdgeInsets.only(bottom: size.height * 0.01),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
