@@ -31,7 +31,7 @@ class Upside extends StatelessWidget {
           right: size.width * 0.04,
           top: size.width * 0.04,
           child: Image.asset(
-            "assets/logos/samawa_logo.png",
+            "assets/logos/logo_samawa_pink.png",
             scale: 3,
             width: size.width * 0.3,
           ),

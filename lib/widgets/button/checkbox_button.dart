@@ -36,7 +36,7 @@ class _CheckboxButtonState extends State<CheckboxButton> {
                   ),
                   onPressed: () {},
                   child: Text(
-                    "Setuju Kebijakan dan Privasi",
+                    "${widget.text}",
                     style: TextStyle(fontSize: 15),
                   ))
             ]));

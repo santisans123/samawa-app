@@ -7,8 +7,12 @@ class InformationData extends StatefulWidget {
 }
 
 class _InformationDataState extends State<InformationData> {
+  final nameController = TextEditingController();
   final tglController = TextEditingController();
   final noTelpController = TextEditingController();
+  final provController = TextEditingController();
+  final cityController = TextEditingController();
+  final kecController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +29,34 @@ class _InformationDataState extends State<InformationData> {
             child: ListView(
               children: [
                 RoundedInputNumber(
+                  textTitle: "Nama",
                   hintText: "Nama",
                   icon: Icons.person_2,
-                  controller: tglController,
+                  controller: nameController,
                 ),
                 RoundedInputNumber(
+                  textTitle: "Tanggal Lahir",
                   hintText: "Tanggal Lahir",
                   icon: Icons.calendar_month,
                   controller: tglController,
+                ),
+                RoundedInputNumber(
+                  textTitle: "Provinsi",
+                  isButton: true,
+                  icon: Icons.location_on,
+                  controller: provController,
+                ),
+                RoundedInputNumber(
+                  textTitle: "Kabupaten/Kota",
+                  isButton: true,
+                  icon: Icons.location_city,
+                  controller: cityController,
+                ),
+                RoundedInputNumber(
+                  textTitle: "Kecamatan",
+                  isButton: true,
+                  icon: Icons.location_city,
+                  controller: kecController,
                 ),
               ],
             )

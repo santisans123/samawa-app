@@ -29,11 +29,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: [
                     Upside(
                       imgUrl: "assets/intro/register.png",
-                        height: size.height / 3.2
+                        height: size.height / 3.8
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                        top: size.height / 2.9,
+                        top: size.height / 3.5,
                       ),
                       child: Container(
                         width: double.infinity,
@@ -60,24 +60,28 @@ class _RegisterPageState extends State<RegisterPage> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       RoundedInputNumber(
+                                        textTitle: "Email",
                                         hintText: "@email",
                                         type: TextInputType.emailAddress,
                                         icon: Icons.email,
                                         controller: emailController,
                                       ),
                                       RoundedInputNumber(
+                                        textTitle: "No Telepon",
                                         hintText: "No Telp",
                                         type: TextInputType.number,
                                         icon: Icons.phone,
                                         controller: telpController,
                                       ),
                                       RoundedInputNumber(
+                                        textTitle: "Password",
                                         hintText: "Password",
                                         isVisible: true,
                                         icon: Icons.lock,
                                         controller: passwordController,
                                       ),
                                       RoundedInputNumber(
+                                        textTitle: "Konfirmasi Password",
                                         hintText: "Retype Password",
                                         isVisible: true,
                                         icon: Icons.lock,

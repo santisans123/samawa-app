@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: size.height / 2,
+                    top: size.height / 2.15,
                   ),
                   child: Container(
                     width: double.infinity,
@@ -58,12 +58,14 @@ class _LoginPageState extends State<LoginPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   RoundedInputNumber(
+                                      textTitle: "Email",
                                       hintText: "@email",
                                       icon: Icons.email,
                                       type: TextInputType.emailAddress,
                                       controller: emailController,
                                   ),
                                   RoundedInputNumber(
+                                    textTitle: "Password",
                                     hintText: "Password",
                                     isVisible: true,
                                     icon: Icons.lock,

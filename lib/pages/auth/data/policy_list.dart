@@ -33,7 +33,6 @@ class _PolicyListState extends State<PolicyList> {
                   ),
                 ),
               ),
-              CheckboxButton(text: 'Setuju Kebijakan dan Privasi'),
               Container(
                   child: RichText(
                 text: TextSpan(
@@ -55,11 +54,22 @@ class _PolicyListState extends State<PolicyList> {
               )),
             ],
           )),
-      bottomNavigationBar: RoundedButton(
-        text: "Lanjutkan",
-        color: sPrimaryColor,
-        press: () {},
-      ),
-    );
+      bottomNavigationBar: Container(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            CheckboxButton(text: 'Dengan Ini Saya Menyetujui Kebijakan dan Privasi'),
+            RoundedButton(
+              text: "Lanjutkan",
+              color: sPrimaryColor,
+              press: () {
+                Get.to(Navbar());
+              },
+            ),
+          ],
+        ))
+      );
   }
 }
