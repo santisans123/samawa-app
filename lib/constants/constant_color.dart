@@ -9,6 +9,8 @@ const sPrimaryPinkPastelColor = Color(0xffFEEEF3);
 const sPrimaryLightColor = Color(0xfffeeeee4);
 //Biru
 const sPrimaryBlueColor = Color(0xff407BFF);
+//Pink
+const sPrimaryPinkColor = Color(0xffEC2958);
 //Orange tua
 const sPrimaryDarkColor = Color(0xffA84420);
 //orange Jingga

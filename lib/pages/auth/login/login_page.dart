@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                                       text: "LOGIN",
                                       color: sPrimaryColor,
                                       press: () {
-
+                                          Get.to(Navbar());
                                       },
                                   ),
                                   RoundedButton(
