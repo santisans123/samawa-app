@@ -55,12 +55,13 @@ class _PolicyListState extends State<PolicyList> {
             ],
           )),
       bottomNavigationBar: Container(
+          margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           // mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            CheckboxButton(text: 'Dengan Ini Saya Menyetujui Kebijakan dan Privasi'),
+            CheckboxButton(text: 'Saya Menyetujui Kebijakan dan Privasi'),
             RoundedButton(
               text: "Lanjutkan",
               color: sPrimaryColor,

@@ -7,11 +7,32 @@ class OpsiGender extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.only(top: size.height * 0.002),
       width: double.infinity,
-      
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextInputTitle(text: "Jenis Kelamin"),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(
+                  child: SmallRoundedIcon(
+                    icon: Icons.male,
+                    textTitle: "Male",
+                  )),
+              Expanded(
+                  child: SmallRoundedIcon(
+                    icon: Icons.female,
+                    textTitle: "Female",
+                  )),
+            ],
+          )
+        ],
+      )
     );
   }
 }

@@ -33,10 +33,7 @@ class _NavbarState extends State<Navbar> {
               alignment: Alignment.center,
               child: Text("Search"),
             ),
-            Container(
-              alignment: Alignment.center,
-              child: Text("Chat"),
-            ),
+            ChatPage(),
             Container(
               alignment: Alignment.center,
               child: Text("Profile"),
