@@ -19,18 +19,20 @@ class _ButtonHomeBottomState extends State<ButtonHomeBottom> {
         CircleHomeButton(
           color: sPrimaryRedColor,
           icon: Ionicons.close,
+          sizeIcon:  0.1,
         ),
         Spacer(),
         CircleHomeButton(
           color: sPrimaryGreenColor,
-          icon: Ionicons.close,
-          sizePadding: 10,
-          sizeIcon: 0.13,
+          icon: Ionicons.chatbubble,
+          sizePadding: 12,
+          sizeIcon: 0.1,
         ),
         Spacer(),
         CircleHomeButton(
           color: sPrimaryPinkColor,
           icon: Ionicons.heart,
+          sizeIcon:  0.1,
         )
       ],
     );

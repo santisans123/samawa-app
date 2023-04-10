@@ -58,14 +58,14 @@ class _FormPasswordState extends State<FormPassword> {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      RoundedInputNumber(
+                                      RoundedInput(
                                         textTitle: "Password",
                                         hintText: "Password",
                                         isVisible: true,
                                         icon: Icons.lock,
                                         controller: passwordController,
                                       ),
-                                      RoundedInputNumber(
+                                      RoundedInput(
                                         textTitle: "Konfirmasi Password",
                                         hintText: "Retype Password",
                                         isVisible: true,

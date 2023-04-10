@@ -6,11 +6,15 @@ class CircleHomeButton extends StatefulWidget {
     required this.color,
     this.sizePadding = 0,
     this.sizeIcon = 0,
+    this.background,
+    this.rmMargin = false,
   }) : super(key: key);
   final IconData icon;
   final Color color;
+  final Color? background;
   final double? sizePadding;
   final double? sizeIcon;
+  final bool? rmMargin;
 
   @override
   State<CircleHomeButton> createState() => _CircleHomeButtonState();
@@ -23,12 +27,12 @@ class _CircleHomeButtonState extends State<CircleHomeButton> {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      margin: EdgeInsets.symmetric(
-          vertical:  size.height * 0.02
+      margin: widget.rmMargin == true ? null : EdgeInsets.symmetric(
+          vertical: size.height * 0.02
       ),
       padding: EdgeInsets.all( widget.sizePadding != 0 ?  widget.sizePadding! : 5),
       decoration: BoxDecoration(
-          color: widget.color.withOpacity(0.1),
+          color: widget.background != null ? widget.background : widget.color.withOpacity(0.1),
           border: Border.all(color: widget.color),
           borderRadius: const BorderRadius.all(Radius.circular(50)),
           boxShadow: <BoxShadow>[

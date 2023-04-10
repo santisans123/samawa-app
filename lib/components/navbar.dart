@@ -1,4 +1,6 @@
 import 'package:samawa/import/main/all_import.dart';
+import 'package:samawa/pages/form_data_cv.dart';
+import 'package:samawa/pages/search/search_page.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({Key? key}) : super(key: key);
@@ -29,10 +31,8 @@ class _NavbarState extends State<Navbar> {
           ),
           screens: [
             HomePage(),
-            Container(
-              alignment: Alignment.center,
-              child: Text("Search"),
-            ),
+            // FormDataCv(),
+            SearchPage(),
             ChatPage(),
             Container(
               alignment: Alignment.center,

@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:samawa/import/main/all_import.dart';
-import 'package:image_picker/image_picker.dart';
 
 class ImageInput extends StatefulWidget {
   const ImageInput({

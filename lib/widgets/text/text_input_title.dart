@@ -4,10 +4,12 @@ class TextInputTitle extends StatefulWidget {
   const TextInputTitle(
       {Key? key,
         required this.text,
+        this.bold = false
       })
       : super(key: key);
 
   final String text;
+  final bool? bold;
 
   @override
   State<TextInputTitle> createState() => _TextInputTitleState();
@@ -22,7 +24,7 @@ class _TextInputTitleState extends State<TextInputTitle> {
     return Container(
         child: Text("${widget.text}", style: TextStyle(
           fontSize: size.width * 0.035,
-          fontWeight: FontWeight.w500,
+          fontWeight: widget.bold == true ? FontWeight.bold : FontWeight.w500,
           color: sPrimaryBlackColor
         )),
     );

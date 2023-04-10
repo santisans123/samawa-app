@@ -57,14 +57,14 @@ class _LoginPageState extends State<LoginPage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  RoundedInputNumber(
+                                  RoundedInput(
                                       textTitle: "Email",
                                       hintText: "@email",
                                       icon: Icons.email,
                                       type: TextInputType.emailAddress,
                                       controller: emailController,
                                   ),
-                                  RoundedInputNumber(
+                                  RoundedInput(
                                     textTitle: "Password",
                                     hintText: "Password",
                                     isVisible: true,

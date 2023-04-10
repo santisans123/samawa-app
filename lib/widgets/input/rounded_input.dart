@@ -1,7 +1,7 @@
 import 'package:samawa/import/main/all_import.dart';
 
-class RoundedInputNumber extends StatefulWidget {
-  const RoundedInputNumber(
+class RoundedInput extends StatefulWidget {
+  const RoundedInput(
       {Key? key,
       this.hintText,
       this.isButton = false,
@@ -10,11 +10,13 @@ class RoundedInputNumber extends StatefulWidget {
       this.icon,
       this.link,
       this.controller,
+      this.maxLine = 0,
       this.isVisible = false,
       this.type = TextInputType.text})
       : super(key: key);
 
   final String? hintText;
+  final int maxLine;
   final bool? isButton;
   final void Function()? onTap;
   final String? textTitle;
@@ -25,10 +27,10 @@ class RoundedInputNumber extends StatefulWidget {
   final TextInputType? type;
 
   @override
-  State<RoundedInputNumber> createState() => _RoundedInputNumberState();
+  State<RoundedInput> createState() => _RoundedInputState();
 }
 
-class _RoundedInputNumberState extends State<RoundedInputNumber> {
+class _RoundedInputState extends State<RoundedInput> {
   bool _passwordVisible = false;
 
   @override
@@ -93,8 +95,9 @@ class _RoundedInputNumberState extends State<RoundedInputNumber> {
                   onFieldSubmitted: widget.link,
                   keyboardType: widget.type,
                   cursorColor: sPrimaryColor,
+                  maxLines: widget.maxLine != 0 ? widget.maxLine : null,
                   decoration: InputDecoration(
-                      icon: Icon(
+                      icon: widget.icon == null ? null : Icon(
                         widget.icon,
                         size: size.width * 0.05,
                         color: sPrimaryColor,

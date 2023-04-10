@@ -59,28 +59,28 @@ class _RegisterPageState extends State<RegisterPage> {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      RoundedInputNumber(
+                                      RoundedInput(
                                         textTitle: "Email",
                                         hintText: "@email",
                                         type: TextInputType.emailAddress,
                                         icon: Icons.email,
                                         controller: emailController,
                                       ),
-                                      RoundedInputNumber(
+                                      RoundedInput(
                                         textTitle: "No Telepon",
                                         hintText: "No Telp",
                                         type: TextInputType.number,
                                         icon: Icons.phone,
                                         controller: telpController,
                                       ),
-                                      RoundedInputNumber(
+                                      RoundedInput(
                                         textTitle: "Password",
                                         hintText: "Password",
                                         isVisible: true,
                                         icon: Icons.lock,
                                         controller: passwordController,
                                       ),
-                                      RoundedInputNumber(
+                                      RoundedInput(
                                         textTitle: "Konfirmasi Password",
                                         hintText: "Retype Password",
                                         isVisible: true,

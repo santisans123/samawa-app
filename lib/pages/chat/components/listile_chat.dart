@@ -45,7 +45,6 @@ class _ListtileChatState extends State<ListtileChat> {
           text: Text(
             "${widget.sumChat}",
             textAlign: TextAlign.start,
-            maxLines: 4,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.width * 0.035,

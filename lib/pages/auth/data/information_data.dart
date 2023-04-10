@@ -26,31 +26,31 @@ class _InformationDataState extends State<InformationData> {
           color: sPrimaryLightWhiteColor,
           child: ListView(
             children: [
-              RoundedInputNumber(
+              RoundedInput(
                 textTitle: "Nama",
                 hintText: "Nama",
                 icon: Icons.person_2,
                 controller: nameController,
               ),
-              RoundedInputNumber(
+              RoundedInput(
                 textTitle: "Tanggal Lahir",
                 hintText: "Tanggal Lahir",
                 icon: Icons.calendar_month,
                 controller: tglController,
               ),
-              RoundedInputNumber(
+              RoundedInput(
                 textTitle: "Provinsi",
                 isButton: true,
                 icon: Icons.location_on,
                 controller: provController,
               ),
-              RoundedInputNumber(
+              RoundedInput(
                 textTitle: "Kabupaten/Kota",
                 isButton: true,
                 icon: Icons.location_city,
                 controller: cityController,
               ),
-              RoundedInputNumber(
+              RoundedInput(
                 textTitle: "Kecamatan",
                 isButton: true,
                 icon: Icons.location_city,
