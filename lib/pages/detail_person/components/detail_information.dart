@@ -13,8 +13,7 @@ class _DetailInformationState extends State<DetailInformation> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      body: Column(
+    return Column(
         children: [
           TextInformation(
             textTitle: "Visi Pernikahan",
@@ -38,7 +37,6 @@ class _DetailInformationState extends State<DetailInformation> {
               textData: "Anak tunggal dengan keluarga besar"
           )
         ],
-      ),
     );
   }
 }

@@ -4,11 +4,11 @@ class SmallRoundedIcon extends StatefulWidget {
   const SmallRoundedIcon({
     Key? key,
     required this.textTitle,
-    required this.icon,
+    this.icon,
   }) : super(key: key);
 
   final String textTitle;
-  final IconData icon;
+  final IconData? icon;
 
   @override
   State<SmallRoundedIcon> createState() => _SmallRoundedIconState();
@@ -41,11 +41,11 @@ class _SmallRoundedIconState extends State<SmallRoundedIcon> {
             ]),
         child: Row(
           children: [
-            Icon(
+            widget.icon != null ? Icon(
               widget.icon,
               size: size.width * 0.06,
               color: sPrimaryColor,
-            ),
+            ) : Container(),
             Expanded(
             child: Container(
               alignment: Alignment.center,

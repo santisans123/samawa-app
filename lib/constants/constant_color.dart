@@ -2,7 +2,6 @@ import 'package:samawa/import/main/all_import.dart';
 
 //orange
 const sPrimaryColor = Color(0xffffa500);
-
 //pink pastel
 const sPrimaryPinkPastelColor = Color(0xffFEEEF3);
 //putih puyeh
@@ -15,7 +14,7 @@ const sPrimaryPinkColor = Color(0xffEC2958);
 const sPrimaryDarkColor = Color(0xffA84420);
 //orange Jingga
 const sPrimaryJinggaColor = Color(0xffff7f00);
-//Prange pastel
+//Orange pastel
 const sPrimaryOrangePastelColor = Color(0xffffc87a);
 //Blue pastel
 const sPrimaryBluePastelColor = Color(0xffD1EDF2);

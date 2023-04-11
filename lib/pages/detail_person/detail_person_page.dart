@@ -52,53 +52,88 @@ class _DetailPersonPageState extends State<DetailPersonPage> {
                           ),
                         ),
                         Spacer() ,
+
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: size.width * 0.01),
+                          child: CircleHomeButton(
+                            link: () {
+                              Get.to(CvPage(
+                                img: widget.img,
+                                name: widget.name,
+                                location: widget.city,
+                              ));
+                            },
+                            icon: Ionicons.id_card,
+                            color: sPrimaryColor,
+                            background: sPrimaryLightWhiteColor,
+                            sizeIcon: 0.06,
+                          ),
+                        ),
                         CircleHomeButton(
                           icon: Ionicons.heart_outline,
                           color: sPrimaryColor,
                           background: sPrimaryLightWhiteColor,
-                          sizeIcon: 0.07,
+                          sizeIcon: 0.06,
                         ),
                       ],
                     )
                   )
               ),
-              Container(
-                height: size.height / 1.7,
-                  transform: Matrix4.translationValues(0.0, -50.0, 0.0),
-                  decoration: BoxDecoration(
-                    color: sPrimaryLightWhiteColor,
-                    borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
-                  ),
-                padding: EdgeInsets.only(
-                  top: size.height * 0.02,
-                  left: size.width * 0.05,
-                  right: size.width * 0.05,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("${widget.name}, 25", style: TextStyle(
-                        fontSize: size.width * 0.07,
-                      fontWeight: FontWeight.bold,
-                      )),
-                    Container(
-                      margin: EdgeInsets.only(
-                          top: size.height * 0.005,
-                        bottom: size.height * 0.01,
+              Stack(
+                children: [
+                  Container(
+                      height: size.height / 1.7,
+                      transform: Matrix4.translationValues(0.0, -50.0, 0.0),
+                      decoration: BoxDecoration(
+                        color: sPrimaryLightWhiteColor,
+                        borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
                       ),
-                     child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
-                         "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
-                         textAlign: TextAlign.justify,
-                         style: TextStyle(
-                             fontSize: size.width * 0.035,
-                             color: sPrimaryDarkGreyColor
-                         ))
+                      padding: EdgeInsets.only(
+                        top: size.height * 0.02,
+                        left: size.width * 0.05,
+                        right: size.width * 0.05,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("${widget.name}, 25", style: TextStyle(
+                            fontSize: size.width * 0.07,
+                            fontWeight: FontWeight.bold,
+                          )),
+                          Container(
+                              margin: EdgeInsets.only(
+                                top: size.height * 0.005,
+                                bottom: size.height * 0.01,
+                              ),
+                              child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+                                  "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      fontSize: size.width * 0.035,
+                                      color: sPrimaryDarkGreyColor
+                                  ))
+                          ),
+                          General(),
+                          DetailInformation()
+                        ],
+                      )
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(right: size.width * 0.12),
+                    transform: Matrix4.translationValues(0.0, -100.0, 0.0),
+                    alignment: Alignment.topRight,
+                    child: CircleHomeButton(
+                      icon: Ionicons.chatbox,
+                      color: sPrimaryColor,
+                      sizePadding: size.width * 0.04,
+                      background: sPrimaryLightWhiteColor,
+                      sizeIcon: 0.09,
                     ),
-                    Expanded(child: DetailInformation())
-                  ],
-                )
+                  )
+                ],
               )
+
             ],
           ),
       bottomNavigationBar: Container(
@@ -107,7 +142,7 @@ class _DetailPersonPageState extends State<DetailPersonPage> {
             text: "Ajukan Khitbah",
             color: sPrimaryColor,
             press: () {
-              Get.to(PolicyList());
+              Get.to(KhitbahForm());
             },
           )),
     );

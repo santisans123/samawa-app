@@ -56,7 +56,13 @@ class _InformationDataState extends State<InformationData> {
                 icon: Icons.location_city,
                 controller: kecController,
               ),
-              OpsiGender(),
+              TwoOptions(
+                title: "Jenis Kelamin",
+                text1: "Perempuan",
+                text2: "Laki-Laki",
+                icon1: Icons.female,
+                icon2: Icons.male,
+              ),
               ListInputImage()
             ],
           )),
