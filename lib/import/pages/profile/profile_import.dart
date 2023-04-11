@@ -1,0 +1,1 @@
+export 'package:samawa/pages/profile/profile_page.dart';
