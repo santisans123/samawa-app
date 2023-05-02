@@ -59,7 +59,7 @@ class _ProfilePageState extends State<ProfilePage> {
           backgroundColor: sPrimaryWhiteColor,
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: Colors.orange,
+            backgroundColor: sPrimaryColor,
             foregroundColor: sPrimaryWhiteColor,
             title: Text(
               "Profile",
