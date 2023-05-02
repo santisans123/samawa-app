@@ -11,6 +11,9 @@ class _FormDataCvState extends State<FormDataCv> {
   final misiController = TextEditingController();
   final essayController = TextEditingController();
 
+  final UserProvider userProvider = Get.find();
+  final box = GetStorage();
+
   var kesiapanMenikah= [
     "Siap",
     "InsyaAllah",
@@ -60,7 +63,7 @@ class _FormDataCvState extends State<FormDataCv> {
                 controller: misiController,
               ),
               RoundedInput(
-                textTitle: "Misi",
+                textTitle: "Essay",
                 hintText: "Essay Diri Minimal 50 karakter",
                 maxLine: 4,
                 type: TextInputType.multiline,
@@ -83,7 +86,26 @@ class _FormDataCvState extends State<FormDataCv> {
             text: "Lanjutkan",
             color: sPrimaryColor,
             press: () {
-              Get.to(PolicyList());
+
+              userProvider.postCV({
+                'marriage_prep': "tes",
+                'vission': visiController.text,
+                'mission': misiController.text,
+                'essay': essayController.text,
+                'religion_status': "test",
+                'mahdzab': "test",
+                'marriage_target': "test",
+                'marital_status': "test",
+              }).then((response) {
+                print("code: ${response.statusCode}");
+                print("message: ${response.body}");
+                if (response.statusCode == 200) {
+                  box.write('access_token', response.body['access_token']);
+                  Get.offAll(ProfilePage());
+                } else {
+                  Get.snackbar('Error', response.body.toString());
+                }
+              });
             },
           )),
     );

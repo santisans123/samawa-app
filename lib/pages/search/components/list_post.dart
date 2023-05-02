@@ -42,7 +42,7 @@ class _ListPostState extends State<ListPost> {
               border: Border.all(color: sPrimaryDarkGreyColor),
               image: DecorationImage(
                 image: AssetImage(widget.img),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
             child: Container(

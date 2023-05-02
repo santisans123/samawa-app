@@ -10,4 +10,5 @@ export 'package:intro_slider/slide_object.dart';
 export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 export 'package:ionicons/ionicons.dart';
 export 'package:image_picker/image_picker.dart';
+export 'package:carousel_slider/carousel_slider.dart';
 export 'package:get_storage/get_storage.dart';

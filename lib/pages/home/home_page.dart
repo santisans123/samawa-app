@@ -15,45 +15,29 @@ class _HomePageState extends State<HomePage> {
       body: Container(
           color: sPrimaryLightWhiteColor,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               HeaderHome(),
-              Container(
-                  width: double.infinity,
-                  height: size.height / 1.222,
-                  decoration: BoxDecoration(
-                    borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(50)),
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/home1.png"),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  child: Container(
-                    margin: EdgeInsets.symmetric(
-                      horizontal: size.width * 0.05,
-                      vertical: size.height * 0.02
-                    ),
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Sulis Tia Wati, 25", style: TextStyle(
-                          fontSize: size.width * 0.07,
-                          color: sPrimaryWhiteColor
-                      )),
-                      Row(
-                        children: [
-                          Icon(Ionicons.location, color: sPrimaryWhiteColor),
-                          Text("Sidoarjo", style: TextStyle(
-                              fontSize: size.width * 0.06,
-                              color: sPrimaryWhiteColor
-                          ),)
-                        ],
-                      ),
-                      ButtonHomeBottom()
-                    ],
-                  ),
+              Stack(
+                children: [
+                  CarouselSlider(
+                      options: CarouselOptions(
+                          height: size.height / 1.22,
+                          autoPlay: true,
+                          viewportFraction: 1,
+                          pauseAutoPlayOnTouch: true),
+                      items: [
+                        ImageCarousel(img: "assets/images/home1.png"),
+                        ImageCarousel(img: "assets/images/person1.jpg"),
+                        ImageCarousel(img: "assets/images/person2.jpg"),
+                      ]),
+                  Container(
+                    margin: EdgeInsets.only(top: size.height/1.52),
+                    alignment: Alignment.bottomCenter,
+                    child: ButtonHomeBottom(),
                   )
+                ],
               )
             ],
           )),

@@ -12,6 +12,8 @@ class _CompleteBiodataState extends State<CompleteBiodata> {
   final eduController = TextEditingController();
   final hobbyController = TextEditingController();
   final aboutFamController = TextEditingController();
+  final UserProvider userProvider = Get.find();
+  final box = GetStorage();
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +61,23 @@ class _CompleteBiodataState extends State<CompleteBiodata> {
             text: "Lanjutkan",
             color: sPrimaryColor,
             press: () {
+              userProvider.postBiodata({
+                "description": "as",
+                "career": "as",
+                "education": "S1",
+                "hobby": "as",
+                "family_info": "anak kedua dari 3 bersasudara"
+
+              }).then((response) {
+                print("code: ${response.statusCode}");
+                print("message: ${response.body}");
+                if (response.statusCode == 200) {
+                  box.write('access_token', response.body['access_token']);
+                  Get.offAll(ProfilePage());
+                } else {
+                  Get.snackbar('Error', response.body.toString());
+                }
+              });
               Get.to(ProfilePage());
             },
           )),
