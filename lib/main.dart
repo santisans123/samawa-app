@@ -1,6 +1,16 @@
 import 'package:samawa/import/main/all_import.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  GetStorage.init();
+  Get.put(UserProvider());
+
   runApp(const MyApp());
 }
 

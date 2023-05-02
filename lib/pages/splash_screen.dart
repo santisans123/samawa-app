@@ -6,19 +6,27 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  // final box = GetStorage();
+  final box = GetStorage();
+
   startSplashPage() async {
     var duration = const Duration(seconds: 5);
     return Timer(duration, () {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => IntroSliderPage()));
+      if (box.hasData('login')) {
+        Navigator.of(context)
+            .pushReplacement(MaterialPageRoute(builder: (context) => Navbar()));
+      } else {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => IntroSliderPage()));
+      }
     });
   }
+
   @override
   void initState() {
     super.initState();
     startSplashPage();
   }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -44,15 +52,12 @@ class _SplashScreenState extends State<SplashScreen> {
               margin: EdgeInsets.symmetric(vertical: width * 0.02),
               child: Align(
                 alignment: Alignment.bottomCenter,
-                child: Text("Copyright 2023 All Right Reserved | Samawa", style: TextStyle(
-                    fontSize: width * 0.03,
-                    color: sPrimaryLightColor
-                )),
+                child: Text("Copyright 2023 All Right Reserved | Samawa",
+                    style: TextStyle(
+                        fontSize: width * 0.03, color: sPrimaryLightColor)),
               ),
             )
-
           ],
-        )
-    );
+        ));
   }
 }

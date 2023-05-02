@@ -1,5 +1,4 @@
 import 'package:samawa/import/main/all_import.dart';
-import 'package:samawa/pages/profile/form_data_cv.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -8,6 +7,49 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  final box = GetStorage();
+
+  Widget logoutContainer() => Container(
+    width: MediaQuery.of(context).size.width /1.2,
+    padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
+    margin: EdgeInsets.symmetric(
+        vertical: MediaQuery.of(context).size.width * 0.01,
+        horizontal: MediaQuery.of(context).size.width * 0.02),
+    child: ElevatedButton(
+      child: Text(
+        "LOG OUT",
+        style: TextStyle(
+            color: sPrimaryWhiteColor,
+            fontSize: MediaQuery.of(context).size.width * 0.05),
+      ),
+      onPressed: () => Get.defaultDialog(
+        title: 'Confirmation',
+        content: Text(
+          'Logout?',
+          style: TextStyle(color: Colors.grey),
+        ),
+        onConfirm: () {
+          box.remove('login');
+          Get.offAll(IntroSliderPage());
+        },
+      ),
+      style: ElevatedButton.styleFrom(
+        primary: sPrimaryColor,
+        padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.03,
+          vertical: MediaQuery.of(context).size.width * 0.02,
+        ),
+        textStyle: TextStyle(
+          letterSpacing: 1,
+          color: sPrimaryBlueColor,
+          fontSize: MediaQuery.of(context).size.width * 0.03,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'OpenSans',
+        ),
+      ),
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -164,31 +206,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 icon: Icons.help,
                                 text: "Bantuan",
                               ),
-
-                              Column(
-                                children: [
-                                  ElevatedButton(
-                                    onPressed: () {},
-                                    style: ElevatedButton.styleFrom(
-                                      primary: Colors.orange,
-                                      onPrimary: sPrimaryWhiteColor,
-                                      minimumSize: const Size.fromHeight(39),
-                                      elevation: 0,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      shadowColor: Colors.black,
-                                    ),
-                                    child: Text(
-                                      "Log Out",
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: sPrimaryWhiteColor,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              logoutContainer()
                             ],
                           ),
                         ),

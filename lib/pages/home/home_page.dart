@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
               HeaderHome(),
               Container(
                   width: double.infinity,
-                  height: size.height / 1.22,
+                  height: size.height / 1.222,
                   decoration: BoxDecoration(
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(50)),

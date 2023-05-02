@@ -1,3 +1,4 @@
+
 import 'package:samawa/import/main/all_import.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,6 +10,33 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final passwordController = TextEditingController();
   final emailController = TextEditingController();
+
+  final UserProvider userProvider = Get.find();
+
+  final box = GetStorage();
+  Widget loginButton() => RoundedButton(
+      text: 'LOGIN',
+      press: () {
+        userProvider.login({
+          'email': emailController.text,
+          'password': passwordController.text
+        }).then((response) {
+          print('respon body: ${response.body}');
+          if (response.body['access_token'] != null) {
+            box.write('token', response.body['access_token']);
+            print('token: ${response.body['access_token']}');
+            box.write('login', true);
+            box.write('email', emailController.text);
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const Navbar()),
+                  (Route<dynamic> route) => false,
+            );
+          } else {
+            Get.snackbar('Info', 'Gagal login');
+          }
+        });
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -75,13 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                                     height: size.width * 0.07,
                                     child: switchListTile(),
                                   ),
-                                  RoundedButton(
-                                      text: "LOGIN",
-                                      color: sPrimaryColor,
-                                      press: () {
-                                          Get.to(Navbar());
-                                      },
-                                  ),
+                                  loginButton(),
                                   RoundedButton(
                                     logo: "assets/logos/google.png",
                                     text: "Login With Google",
