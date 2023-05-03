@@ -20,7 +20,7 @@ class UserProvider extends GetConnect {
 
     httpClient.addRequestModifier((Request request) {
       if (box.hasData('access_token'))
-        request.headers['X-Token'] = box.read('access_token');
+        request.headers['Authorization'] = "Bearier ${box.read('access_token')}";
       return request;
     });
   }
