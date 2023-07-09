@@ -80,7 +80,7 @@ class _VerificationState extends State<Verification> {
             text: "Next",
             color: sPrimaryColor,
             press: () {
-              Get.to(ProfilePage());
+              Get.to(Verification1());
             },
           )),
     );

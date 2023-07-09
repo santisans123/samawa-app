@@ -1,12 +1,12 @@
 import 'package:samawa/import/main/all_import.dart';
 
-class Verification1 extends StatefulWidget {
-  const Verification1({Key? key}) : super(key: key);
+class Verification3 extends StatefulWidget {
+  const Verification3({Key? key}) : super(key: key);
   @override
-  State<Verification1> createState() => _Verification1State();
+  State<Verification3> createState() => _Verification3State();
 }
 
-class _Verification1State extends State<Verification1> {
+class _Verification3State extends State<Verification3> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -22,7 +22,7 @@ class _Verification1State extends State<Verification1> {
             text: "Next",
             color: sPrimaryColor,
             press: () {
-              Get.to(Verification2());
+              Get.to(Verification4());
             },
           )),
     );
