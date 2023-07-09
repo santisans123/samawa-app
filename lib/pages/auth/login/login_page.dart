@@ -1,5 +1,5 @@
-
 import 'package:samawa/import/main/all_import.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,6 +11,7 @@ class _LoginPageState extends State<LoginPage> {
   final passwordController = TextEditingController();
   final emailController = TextEditingController();
 
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
   final UserProvider userProvider = Get.find();
 
   final box = GetStorage();
@@ -30,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => const Navbar()),
-                  (Route<dynamic> route) => false,
+              (Route<dynamic> route) => false,
             );
           } else {
             Get.snackbar('Info', 'Gagal login');
@@ -86,11 +87,11 @@ class _LoginPageState extends State<LoginPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   RoundedInput(
-                                      textTitle: "Email",
-                                      hintText: "@email",
-                                      icon: Icons.email,
-                                      type: TextInputType.emailAddress,
-                                      controller: emailController,
+                                    textTitle: "Email",
+                                    hintText: "@email",
+                                    icon: Icons.email,
+                                    type: TextInputType.emailAddress,
+                                    controller: emailController,
                                   ),
                                   RoundedInput(
                                     textTitle: "Password",
@@ -110,11 +111,12 @@ class _LoginPageState extends State<LoginPage> {
                                     color: sPrimaryWhiteColor,
                                     textColor: sPrimaryColor,
                                     press: () {
-
+                                      _googleSignIn.signIn();
                                     },
                                   ),
                                   Container(
-                                    margin: EdgeInsets.only(top:  size.width * 0.02),
+                                    margin:
+                                        EdgeInsets.only(top: size.width * 0.02),
                                     child: UnderPart(
                                       title: "Don't have an account?",
                                       navigatorText: "Register",
@@ -123,7 +125,6 @@ class _LoginPageState extends State<LoginPage> {
                                       },
                                     ),
                                   ),
-
                                   UnderPart(
                                     navigatorText: "Forgot password?",
                                     onTap: () {},

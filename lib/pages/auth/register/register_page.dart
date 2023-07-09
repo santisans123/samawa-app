@@ -1,4 +1,5 @@
 import 'package:samawa/import/main/all_import.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   bool isEmailCorrect = false;
   final telpController = TextEditingController();
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   final UserProvider userProvider = Get.find();
 
@@ -138,7 +140,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                     text: "Register With Google",
                                     color: sPrimaryWhiteColor,
                                     textColor: sPrimaryColor,
-                                    press: () {},
+                                    press: () {
+                                      _googleSignIn.signIn();
+                                    },
                                   ),
                                   Container(
                                     margin:

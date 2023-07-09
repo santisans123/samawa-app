@@ -15,7 +15,7 @@ class UserProvider extends GetConnect {
 
   @override
   void onInit() {
-    httpClient.baseUrl = 'https://samawa.sigarda.com/public';
+    httpClient.baseUrl = 'https://samawa.sigarda.com/';
 
     httpClient.addRequestModifier((Request request) {
       if (box.hasData('access_token'))

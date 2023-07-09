@@ -69,3 +69,7 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
+plugin {
+    id 'com.google.gms.google-services' version '4.3.15' apply false
+}
