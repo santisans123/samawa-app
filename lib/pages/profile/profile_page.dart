@@ -180,7 +180,9 @@ class _ProfilePageState extends State<ProfilePage> {
                             text: "Lengkapi CV",
                           ),
                           ListtileMenuProfile(
-                            link: () {},
+                            link: () {
+                              Get.to(Verification());
+                            },
                             icon: Icons.verified_user,
                             text: "Verifikasi KTP",
                           ),
