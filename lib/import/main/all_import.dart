@@ -5,4 +5,3 @@ export 'package:samawa/import/widgets/widgets_import.dart';
 export 'package:samawa/import/api/api_import.dart';
 
 export 'package:samawa/constants/constant_color.dart';
-
