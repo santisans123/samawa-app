@@ -1,5 +1,5 @@
-import 'package:samawa/import/main/all_import.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:samawa/import/main/all_import.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

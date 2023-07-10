@@ -1,15 +1,27 @@
+import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:samawa/import/main/all_import.dart';
 
-import 'package:get/get_connect/http/src/request/request.dart';
-
 class UserProvider extends GetConnect {
-  Future<Response> login(Map data) => post('/api/auth/login', data);
+  Future<Response> login(Map data) => post('api/auth/login', data, headers: {
+        'Content-Type': "application/json'",
+      });
 
-  Future<Response> register(Map data) => post('/api/auth/register', data);
+  Future<Response> register(Map data) =>
+      post('api/auth/register', data, headers: {
+        'Content-Type': "application/json'",
+        'Authorization': "Bearer ${box.read('token')}"
+      });
 
-  Future<Response> postBiodata(Map data) => post('/api/biodata', data);
+  Future<Response> postBiodata(Map data) => post('api/biodata', data, headers: {
+        'Content-Type': "application/json'",
+        'Authorization': "Bearer ${box.read('token')}"
+      });
 
-  Future<Response> postCV(Map data) => post('/api/curriculum-vitae', data);
+  Future<Response> postCV(Map data) =>
+      post('api/curriculum-vitae', data, headers: {
+        'Content-Type': "application/json'",
+        'Authorization': "Bearer ${box.read('token')}"
+      });
 
   final box = GetStorage();
 

@@ -7,32 +7,21 @@ class FormDataCv extends StatefulWidget {
 }
 
 class _FormDataCvState extends State<FormDataCv> {
+  final prepController = TextEditingController();
   final visiController = TextEditingController();
   final misiController = TextEditingController();
   final essayController = TextEditingController();
+  final beragamaController = TextEditingController();
+  final mahzabController = TextEditingController();
 
   final UserProvider userProvider = Get.find();
   final box = GetStorage();
 
-  var kesiapanMenikah= [
-    "Siap",
-    "InsyaAllah",
-    "Belum"
-  ];
+  var kesiapanMenikah = ["Siap", "InsyaAllah", "Belum"];
 
-  var statusBeragama= [
-    "Taat",
-    "InsyaAllah",
-    "Perlu Belajar",
-    "Belum"
-  ];
+  var statusBeragama = ["Taat", "InsyaAllah", "Perlu Belajar", "Belum"];
 
-  var mahzab= [
-    "Syafii",
-    "Maliki",
-    "Hanafi",
-    "Hambali"
-  ];
+  var mahzab = ["Syafii", "Maliki", "Hanafi", "Hambali"];
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +38,10 @@ class _FormDataCvState extends State<FormDataCv> {
               DropdownInput(
                 textTitle: "Kesiapan Menikah",
                 items: kesiapanMenikah,
+                onChanged: (String newValue) {
+                  prepController.text = newValue;
+                  print('Nilai terpilih: $newValue');
+                },
               ),
               RoundedInput(
                 textTitle: "Visi",
@@ -72,12 +65,19 @@ class _FormDataCvState extends State<FormDataCv> {
               DropdownInput(
                 textTitle: "Status Beragama",
                 items: statusBeragama,
+                onChanged: (String newValue) {
+                  beragamaController.text = newValue;
+                  print('Nilai terpilih: $newValue');
+                },
               ),
               DropdownInput(
                 textTitle: "Mahzab",
                 items: mahzab,
+                onChanged: (String newValue) {
+                  mahzabController.text = newValue;
+                  print('Nilai terpilih: $newValue');
+                },
               ),
-
             ],
           )),
       bottomNavigationBar: Container(
@@ -86,16 +86,15 @@ class _FormDataCvState extends State<FormDataCv> {
             text: "Lanjutkan",
             color: sPrimaryColor,
             press: () {
-
               userProvider.postCV({
-                'marriage_prep': "tes",
+                'marital_status': "test",
+                'marriage_prep': prepController.text,
+                'marriage_target': 10,
                 'vission': visiController.text,
                 'mission': misiController.text,
                 'essay': essayController.text,
-                'religion_status': "test",
-                'mahdzab': "test",
-                'marriage_target': "test",
-                'marital_status': "test",
+                'religion_status': beragamaController.text,
+                'mahdzab': mahzabController.text,
               }).then((response) {
                 print("code: ${response.statusCode}");
                 print("message: ${response.body}");

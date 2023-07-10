@@ -29,7 +29,12 @@ class _ProfilePageState extends State<ProfilePage> {
               style: TextStyle(color: Colors.grey),
             ),
             onConfirm: () {
+              // box.remove('login');
+              // Menghapus data login tersimpan
+              box.remove('token');
               box.remove('login');
+              box.remove('email');
+
               Get.offAll(IntroSliderPage());
             },
           ),

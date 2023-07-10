@@ -39,7 +39,7 @@ class _CompleteBiodataState extends State<CompleteBiodata> {
               ),
               RoundedInput(
                 textTitle: "Pendidikan Terakhir",
-                isButton: true,
+                // isButton: true,
                 icon: Icons.school,
                 controller: eduController,
               ),
@@ -51,7 +51,7 @@ class _CompleteBiodataState extends State<CompleteBiodata> {
               RoundedInput(
                 textTitle: "Informasi Keluarga",
                 hintText: "2 bersaudara.",
-                controller: hobbyController,
+                controller: aboutFamController,
               ),
             ],
           )),
@@ -62,12 +62,11 @@ class _CompleteBiodataState extends State<CompleteBiodata> {
             color: sPrimaryColor,
             press: () {
               userProvider.postBiodata({
-                "description": "as",
-                "career": "as",
-                "education": "S1",
-                "hobby": "as",
-                "family_info": "anak kedua dari 3 bersasudara"
-
+                "description": aboutMeController.text,
+                "career": jobController.text,
+                "education": eduController.text,
+                "hobby": hobbyController.text,
+                "family_info": aboutFamController.text
               }).then((response) {
                 print("code: ${response.statusCode}");
                 print("message: ${response.body}");

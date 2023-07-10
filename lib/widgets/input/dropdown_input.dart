@@ -1,13 +1,13 @@
 import 'package:samawa/import/main/all_import.dart';
 
 class DropdownInput extends StatefulWidget {
-  const DropdownInput({Key? key,
-    required this.items,
-    this.textTitle
-  }) : super(key: key);
+  const DropdownInput(
+      {Key? key, required this.items, this.textTitle, this.onChanged})
+      : super(key: key);
 
   final String? textTitle;
   final List<String> items;
+  final ValueChanged<String>? onChanged;
 
   @override
   State<DropdownInput> createState() => _DropdownInputState();
@@ -48,6 +48,10 @@ class _DropdownInputState extends State<DropdownInput> {
               setState(() {
                 dropdownvalue = newValue!;
               });
+              //supaya bisa memberikan value
+              if (widget.onChanged != null) {
+                widget.onChanged!(newValue!);
+              }
             },
           )
         ]);
