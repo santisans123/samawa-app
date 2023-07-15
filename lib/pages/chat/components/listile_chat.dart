@@ -42,7 +42,7 @@ class _ListtileChatState extends State<ListtileChat> {
                         blurRadius: 1)
                   ])),
           trailing: RoundedText(
-          text: Text(
+              text: Text(
             "${widget.sumChat}",
             textAlign: TextAlign.start,
             overflow: TextOverflow.ellipsis,
@@ -54,10 +54,9 @@ class _ListtileChatState extends State<ListtileChat> {
             widget.name,
             textAlign: TextAlign.start,
             style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: MediaQuery.of(context).size.width * 0.035,
-              letterSpacing: 0.5
-            ),
+                fontWeight: FontWeight.bold,
+                fontSize: MediaQuery.of(context).size.width * 0.035,
+                letterSpacing: 0.5),
           ),
           subtitle: Text(
             widget.description,

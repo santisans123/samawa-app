@@ -36,3 +36,5 @@ const sPrimaryTextGreyColor = Color(0xff6D6D6D);
 const sPrimaryGreenColor = Colors.green;
 //merah
 const sPrimaryRedColor = Colors.red;
+//kuning
+const sPrimaryYellowColor = Color(0xffFFD105);
