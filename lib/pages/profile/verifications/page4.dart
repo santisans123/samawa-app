@@ -39,34 +39,38 @@ class _Verification4State extends State<Verification4> {
                   ),
                 ),
               ),
+              SizedBox(height: 20),
               Container(
                 width: size.width,
                 child: Padding(
-                  padding: EdgeInsets.only(top: size.width * 0.02),
+                  padding: EdgeInsets.only(top: size.width * 0.01),
                   child: Image.asset(
-                    "assets/images/verification.png",
+                    "assets/images/idcard.png",
                     alignment: Alignment.topCenter,
-                    height: size.height / 3,
+                    height: size.height / 5,
                     fit: BoxFit.contain,
                   ),
                 ),
               ),
+              SizedBox(height: 20),
               Container(
                 child: RichText(
                   text: TextSpan(
                     style: TextStyle(color: sPrimaryDarkGreyColor),
                     children: [
                       TextSpan(
-                        text:
-                            'Lepaskan kacamata, masker, atau penutup wajah lainnya \n\n\n',
+                        text: 'Siapkan e-KTP asli Anda \n\n\n',
+                      ),
+                      TextSpan(
+                        text: 'Ambil foto e-KTP dalam posisi landscape \n\n\n',
                       ),
                       TextSpan(
                         text:
-                            'Posisikan handphone setinggi mata dalam kondisi pencahayaan yang baik \n\n\n',
+                            'Pastikan e-KTP Anda dalam kondisi baik, tidak rusak, dan datanya terlihat jelas \n\n\n',
                       ),
                       TextSpan(
                         text:
-                            'Pastikan wajah Anda berada dalam frame dan siapkan senyum terbaik Anda \n\n\n',
+                            'Ambil foto e-KTP Anda dan pastikan untuk tidak menggunakan fitur flash \n\n\n',
                       ),
                     ],
                   ),

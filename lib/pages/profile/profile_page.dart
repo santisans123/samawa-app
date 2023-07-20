@@ -1,5 +1,7 @@
 import 'package:samawa/import/main/all_import.dart';
 
+import '../../models/modelsUser.dart';
+
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
   @override
@@ -8,6 +10,19 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   final box = GetStorage();
+
+  final UserProvider userProvider = Get.find();
+  late Datum user;
+
+  @override
+  void initState() {
+    super.initState();
+    userGet();
+  }
+
+  void userGet() async {
+    user = await userProvider.getUser();
+  }
 
   Widget logoutContainer() => Container(
         width: MediaQuery.of(context).size.width / 1.2,
@@ -165,7 +180,10 @@ class _ProfilePageState extends State<ProfilePage> {
                         children: [
                           ListtileMenuProfile(
                             link: () {
-                              Get.to(EditProfile());
+                              Get.to(
+                                EditProfile(),
+                                arguments: user,
+                              );
                             },
                             icon: Icons.person,
                             text: "Edit Profile",
@@ -199,12 +217,16 @@ class _ProfilePageState extends State<ProfilePage> {
                             text: "Pengaturan",
                           ),
                           ListtileMenuProfile(
-                            link: () {},
+                            link: () {
+                              Get.to(PrivacyTerms());
+                            },
                             icon: Icons.fingerprint,
                             text: "Kebijakan dan Privasi",
                           ),
                           ListtileMenuProfile(
-                            link: () {},
+                            link: () {
+                              Get.to(HelpPage());
+                            },
                             icon: Icons.help,
                             text: "Bantuan",
                           ),

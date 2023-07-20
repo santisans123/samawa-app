@@ -1,4 +1,5 @@
 import 'package:samawa/import/main/all_import.dart';
+import 'package:samawa/models/modelsUser.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -7,16 +8,26 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
+  late Datum user = Get.arguments;
   final nameController = TextEditingController();
   final tglController = TextEditingController();
   final noTelpController = TextEditingController();
   final provController = TextEditingController();
   final cityController = TextEditingController();
-  final kecController = TextEditingController();
+  final genderController = TextEditingController();
+  final UserProvider userProvider = Get.find();
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    if (user != null) {
+      nameController.text = user.name;
+      tglController.text = user.bornday.toString();
+      noTelpController.text = user.phone;
+      provController.text = user.province;
+      cityController.text = user.city;
+      genderController.text = user.gender;
+    }
 
     return Scaffold(
       appBar: AppbarHeader(title: "Edit Profile"),
@@ -59,6 +70,20 @@ class _EditProfileState extends State<EditProfile> {
             text: "Simpan",
             color: sPrimaryColor,
             press: () {
+              userProvider.putUser({
+                "name": nameController.text,
+                "bornday": tglController.text,
+                "gender": genderController.text,
+              }).then((response) {
+                print("code: ${response.statusCode}");
+                print("message: ${response.body}");
+                if (response.statusCode == 200) {
+                  // box.write('access_token', response.body['access_token']);
+                  Get.offAll(ProfilePage());
+                } else {
+                  Get.snackbar('Error', response.body.toString());
+                }
+              });
               Get.to(ProfilePage());
             },
           )),

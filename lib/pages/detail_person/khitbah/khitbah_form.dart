@@ -51,10 +51,7 @@ class _KhitbahFormState extends State<KhitbahForm> {
                   controller: timeController,
                 ),
                 TwoOptions(
-                    title: "Pendamping",
-                    text1: "Mandiri",
-                    text2: "Aplikasi"
-                ),
+                    title: "Pendamping", text1: "Mandiri", text2: "Aplikasi"),
                 RoundedInput(
                   textTitle: "Nama Wali",
                   hintText: "Nama Wali",
@@ -81,7 +78,9 @@ class _KhitbahFormState extends State<KhitbahForm> {
           child: RoundedButton(
             text: "Submit",
             color: sPrimaryColor,
-            press: () {},
+            press: () {
+              Get.to(SearchPage());
+            },
           ),
         ));
   }

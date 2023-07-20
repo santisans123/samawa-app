@@ -1,7 +1,8 @@
 import 'package:samawa/import/main/all_import.dart';
 
 class ButtonHomeBottom extends StatefulWidget {
-  const ButtonHomeBottom({Key? key,
+  const ButtonHomeBottom({
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -9,22 +10,21 @@ class ButtonHomeBottom extends StatefulWidget {
 }
 
 class _ButtonHomeBottomState extends State<ButtonHomeBottom> {
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    bool _lightIsOn = false;
 
     return Container(
       margin: EdgeInsets.symmetric(
-          horizontal: size.width * 0.05,
-          vertical: size.height * 0.02
-      ),
+          horizontal: size.width * 0.05, vertical: size.height * 0.02),
       child: Row(
         children: [
           CircleHomeButton(
             color: sPrimaryRedColor,
             icon: Ionicons.close,
-            sizeIcon:  0.1,
+            sizeIcon: 0.1,
+            link: () {},
           ),
           Spacer(),
           CircleHomeButton(
@@ -32,12 +32,18 @@ class _ButtonHomeBottomState extends State<ButtonHomeBottom> {
             icon: Ionicons.chatbubble,
             sizePadding: 12,
             sizeIcon: 0.1,
+            link: () {
+              Get.to(RoomChatPage());
+            },
           ),
           Spacer(),
           CircleHomeButton(
             color: sPrimaryPinkColor,
             icon: Ionicons.heart,
-            sizeIcon:  0.1,
+            sizeIcon: 0.1,
+            link: () {
+              // Get.to(ChatPage());
+            },
           )
         ],
       ),

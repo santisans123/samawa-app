@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                         ImageCarousel(img: "assets/images/person2.jpg"),
                       ]),
                   Container(
-                    margin: EdgeInsets.only(top: size.height/1.52),
+                    margin: EdgeInsets.only(top: size.height / 1.52),
                     alignment: Alignment.bottomCenter,
                     child: ButtonHomeBottom(),
                   )

@@ -22,7 +22,7 @@ class _Verification5State extends State<Verification5> {
             text: "Next",
             color: sPrimaryColor,
             press: () {
-              Get.to(ProfilePage());
+              Get.to(CompleteInfo());
             },
           )),
     );
