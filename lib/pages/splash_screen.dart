@@ -15,8 +15,8 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.of(context)
             .pushReplacement(MaterialPageRoute(builder: (context) => Navbar()));
       } else {
-        Navigator.of(context, rootNavigator: true)
-            .pop(MaterialPageRoute(builder: (context) => IntroSliderPage()));
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => IntroSliderPage()));
       }
     });
   }

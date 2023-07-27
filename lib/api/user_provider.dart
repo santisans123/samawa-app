@@ -32,6 +32,12 @@ class UserProvider extends GetConnect {
         'Authorization': "Bearer ${box.read('token')}"
       });
 
+  Future<Response> postKhitbah(Map data) =>
+      post('api/khitbah-submission', data, headers: {
+        'Content-Type': "application/json'",
+        'Authorization': "Bearer ${box.read('token')}"
+      });
+
   Future<Datum> getUser() async {
     final url = Uri.parse(
         'https://samawa.sigarda.com/api/get-user'); // Replace with the actual API URL

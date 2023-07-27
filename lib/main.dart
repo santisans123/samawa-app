@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       // UserModel userModel = UserModel.fromJson(userData);
       return const HomePage();
     } else {
-      return const LoginPage();
+      return SplashScreen();
     }
   }
 
