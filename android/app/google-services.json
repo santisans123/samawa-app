@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "206190069664",
-    "project_id": "samawa-848c4",
-    "storage_bucket": "samawa-848c4.appspot.com"
+    "project_number": "814183821600",
+    "project_id": "samawa-app-4139c",
+    "storage_bucket": "samawa-app-4139c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:206190069664:android:3baa524ae44f0c65c7c6c5",
+        "mobilesdk_app_id": "1:814183821600:android:1ac06b4c8917c66be56745",
         "android_client_info": {
-          "package_name": "com.example.samawa"
+          "package_name": "com.example.samawa_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "206190069664-ib6ficlu431ndkt9vjfuse66fq6bgqrn.apps.googleusercontent.com",
+          "client_id": "814183821600-lm08pcn9s2tpdf2d8oduspa20sgrrc5r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.samawa",
+            "package_name": "com.example.samawa_app",
             "certificate_hash": "f782e0bbeb14dcbfb39eb56ff02a4cf989bc11e6"
           }
         },
         {
-          "client_id": "206190069664-b0arnd8ibsofhpvs8dkgovaktihh5mpt.apps.googleusercontent.com",
+          "client_id": "814183821600-ekammntoh473fej7ga5ru1a3m969kudi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCnUWOs7aOWr0O8QR27meYo0-sZ3oSd-HA"
+          "current_key": "AIzaSyAvUTY_9sIWms2pJg06n_1Rm2MTRZcvmyA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "206190069664-b0arnd8ibsofhpvs8dkgovaktihh5mpt.apps.googleusercontent.com",
+              "client_id": "814183821600-ekammntoh473fej7ga5ru1a3m969kudi.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

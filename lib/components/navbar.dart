@@ -27,7 +27,7 @@ class _NavbarState extends State<Navbar> {
               blurRadius: 8)
         ],
       ),
-      screens: [HomePage(), SearchPage(), RoomChatPage(), ProfilePage()],
+      screens: [HomePage(), SearchPage(), ChatPage(), ProfilePage()],
       items: _navBarsItems(),
       navBarStyle: NavBarStyle.style14,
     ));
