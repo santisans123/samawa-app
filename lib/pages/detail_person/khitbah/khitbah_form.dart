@@ -60,15 +60,6 @@ class _KhitbahFormState extends State<KhitbahForm> {
                 icon: Icons.person,
                 controller: guardianNameController,
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('Button'),
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), // <-- Radius
-                  ),
-                ),
-              ),
               RoundedInput(
                 textTitle: "No Whatsapp",
                 hintText: "No Whatsapp",
