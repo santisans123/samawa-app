@@ -60,6 +60,15 @@ class _KhitbahFormState extends State<KhitbahForm> {
                 icon: Icons.person,
                 controller: guardianNameController,
               ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('Button'),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12), // <-- Radius
+                  ),
+                ),
+              ),
               RoundedInput(
                 textTitle: "No Whatsapp",
                 hintText: "No Whatsapp",
@@ -82,11 +91,12 @@ class _KhitbahFormState extends State<KhitbahForm> {
           color: sPrimaryColor,
           press: () {
             userProvider.postKhitbah({
-              'date': dateController.text,
-              'time': timeController.text,
+              'to': "1",
               'guardianName': guardianNameController.text,
               'guardianPhone': guardianPhoneController.text,
-              'notesController': notesController.text,
+              'notes': notesController.text,
+              'date': dateController.text,
+              'time': timeController.text,
             }).then((response) {
               print("code: ${response.statusCode}");
               print("message: ${response.body}");
