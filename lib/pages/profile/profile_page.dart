@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:samawa/import/main/all_import.dart';
 
 import '../../models/modelsUser.dart';
@@ -49,7 +51,8 @@ class _ProfilePageState extends State<ProfilePage> {
               box.remove('token');
               box.remove('login');
               box.remove('email');
-
+              GoogleSignIn().signOut();
+              FirebaseAuth.instance.signOut();
               Get.offAll(IntroSliderPage());
             },
           ),

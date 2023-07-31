@@ -38,9 +38,39 @@ class UserProvider extends GetConnect {
         'Authorization': "Bearer ${box.read('token')}"
       });
 
+  Future<Response> updateKhitbah(Map data) =>
+      post('api/update-submission', data, headers: {
+        'Content-Type': "application/json'",
+        'Authorization': "Bearer ${box.read('token')}"
+      });
+
   Future<Datum> getUser() async {
     final url = Uri.parse(
         'https://samawa.sigarda.com/api/get-user'); // Replace with the actual API URL
+
+    final response = await http.get(
+      url,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${box.read('token')}',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      final jsonString = response.body;
+      print(jsonString); // Print the JSON response for debugging
+      final user = userFromJson(response.body);
+      final data = user.data[0];
+      print(data.id);
+      return data;
+    } else {
+      throw Exception('Failed to fetch user data');
+    }
+  }
+
+  Future<Datum> getKhitbah() async {
+    final url = Uri.parse(
+        'https://samawa.sigarda.com/api/get-submission'); // Replace with the actual API URL
 
     final response = await http.get(
       url,

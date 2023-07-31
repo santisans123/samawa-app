@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:samawa/import/main/all_import.dart';
 
 void main() async {
@@ -31,8 +30,8 @@ class MyApp extends StatelessWidget {
       //     .doc(user.uid)
       //     .get();
       // UserModel userModel = UserModel.fromJson(userData);
-      GoogleSignIn().signOut();
-      firebaseAuth.signOut();
+      // GoogleSignIn().signOut();
+      // firebaseAuth.signOut();
       return const HomePage();
       // return SplashScreen();
     } else {
