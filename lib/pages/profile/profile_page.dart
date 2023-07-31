@@ -106,7 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         CircleAvatar(
                           radius: 55,
                           backgroundImage:
-                              AssetImage('assets/images/person-male.jpeg'),
+                              AssetImage('assets/images/person2.jpg'),
                         ),
                         SizedBox(height: 10),
                         ElevatedButton(
@@ -128,7 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         SizedBox(height: 5),
                         Text(
-                          "Ali Assegaf, 25",
+                          "Sans, 21",
                           style: TextStyle(
                             fontSize: size.width * 0.05,
                             fontWeight: FontWeight.bold,

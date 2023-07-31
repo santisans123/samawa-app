@@ -82,11 +82,12 @@ class _KhitbahFormState extends State<KhitbahForm> {
           color: sPrimaryColor,
           press: () {
             userProvider.postKhitbah({
-              'date': dateController.text,
-              'time': timeController.text,
+              'to': "1",
               'guardianName': guardianNameController.text,
               'guardianPhone': guardianPhoneController.text,
-              'notesController': notesController.text,
+              'notes': notesController.text,
+              'date': dateController.text,
+              'time': timeController.text,
             }).then((response) {
               print("code: ${response.statusCode}");
               print("message: ${response.body}");
