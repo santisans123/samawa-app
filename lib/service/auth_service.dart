@@ -39,7 +39,7 @@ class AuthService {
             'phoneNumber': userCredential.user!.phoneNumber,
             'date': DateTime.now(),
           });
-          String apiUrl = 'http://127.0.0.1:8000/api/auth/register';
+          String apiUrl = 'https://samawa.sigarda.com/api/auth/register';
           try {
             final response = await http.post(Uri.parse(apiUrl), body: {
               'uid': userCredential.user!.uid,
