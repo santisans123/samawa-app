@@ -12,8 +12,13 @@ class _SplashScreenState extends State<SplashScreen> {
     var duration = const Duration(seconds: 5);
     return Timer(duration, () {
       if (box.hasData('login')) {
-        Navigator.of(context)
-            .pushReplacement(MaterialPageRoute(builder: (context) => Navbar()));
+        // print("ada data");
+        box.remove('token');
+        box.remove('login');
+        box.remove('email');
+        Get.offAll(IntroSliderPage());
+        // Navigator.of(context)
+        //     .pushReplacement(MaterialPageRoute(builder: (context) => Navbar()));
       } else {
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => IntroSliderPage()));

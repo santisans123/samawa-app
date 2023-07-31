@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:samawa/import/main/all_import.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:samawa/service/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -140,8 +142,17 @@ class _RegisterPageState extends State<RegisterPage> {
                                     text: "Register With Google",
                                     color: sPrimaryWhiteColor,
                                     textColor: sPrimaryColor,
-                                    press: () {
-                                      _googleSignIn.signIn();
+                                    press: () async {
+                                      User? result = await AuthService()
+                                          .signInWithGoogle();
+                                      if (result != null) {
+                                        print("success");
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Navbar()));
+                                      }
+                                      // _googleSignIn.signIn();
                                     },
                                   ),
                                   Container(
