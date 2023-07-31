@@ -44,8 +44,8 @@ class Datum {
   dynamic emailVerifiedAt;
   int isVerified;
   int role;
-  DateTime createdAt;
-  DateTime updatedAt;
+  // DateTime createdAt;
+  // DateTime updatedAt;
 
   Datum({
     required this.id,
@@ -59,8 +59,8 @@ class Datum {
     required this.emailVerifiedAt,
     required this.isVerified,
     required this.role,
-    required this.createdAt,
-    required this.updatedAt,
+    // required this.createdAt,
+    // required this.updatedAt,
   });
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
@@ -75,8 +75,8 @@ class Datum {
         emailVerifiedAt: json["email_verified_at"],
         isVerified: json["is_verified"],
         role: json["role"],
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
+        //createdAt: DateTime.parse(json["created_at"]),
+        //updatedAt: DateTime.parse(json["updated_at"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -92,7 +92,7 @@ class Datum {
         "email_verified_at": emailVerifiedAt,
         "is_verified": isVerified,
         "role": role,
-        "created_at": createdAt.toIso8601String(),
-        "updated_at": updatedAt.toIso8601String(),
+        // "created_at": createdAt.toIso8601String(),
+        // "updated_at": updatedAt.toIso8601String(),
       };
 }
