@@ -76,7 +76,7 @@ class Datum {
         isVerified: json["is_verified"],
         role: json["role"],
         // createdAt: DateTime.parse(json["created_at"]),
-        // // createdAt: json["created_at"],
+        // createdAt: json["created_at"],
         // updatedAt: DateTime.parse(json["updated_at"]),
       );
 
