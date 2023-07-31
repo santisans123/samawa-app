@@ -75,8 +75,9 @@ class Datum {
         emailVerifiedAt: json["email_verified_at"],
         isVerified: json["is_verified"],
         role: json["role"],
-        //createdAt: DateTime.parse(json["created_at"]),
-        //updatedAt: DateTime.parse(json["updated_at"]),
+        // createdAt: DateTime.parse(json["created_at"]),
+        // createdAt: json["created_at"],
+        // updatedAt: DateTime.parse(json["updated_at"]),
       );
 
   Map<String, dynamic> toJson() => {

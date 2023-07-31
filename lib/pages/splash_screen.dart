@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:samawa/import/main/all_import.dart';
+import 'package:samawa/service/auth_service.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -7,11 +10,19 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   final box = GetStorage();
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   startSplashPage() async {
     var duration = const Duration(seconds: 5);
     return Timer(duration, () {
       if (box.hasData('login')) {
+        // print("ada data");
+        // box.remove('token');
+        // box.remove('login');
+        // box.remove('email');
+        // GoogleSignIn().signOut();
+        // firebaseAuth.signOut();
+        // Get.offAll(IntroSliderPage());
         Navigator.of(context)
             .pushReplacement(MaterialPageRoute(builder: (context) => Navbar()));
       } else {
