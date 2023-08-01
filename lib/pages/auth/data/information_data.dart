@@ -77,7 +77,7 @@ class _InformationDataState extends State<InformationData> {
               // ),
               Text(
                 style: TextStyle(
-                  fontSize: 16.8,
+                  fontSize: 14,
                   fontFamily: 'Open Sans',
                   fontWeight: FontWeight.w500,
                 ),
@@ -88,7 +88,7 @@ class _InformationDataState extends State<InformationData> {
               SizedBox(height: 10),
               Text(
                 style: TextStyle(
-                  fontSize: 16.8,
+                  fontSize: 14,
                   fontFamily: 'Open Sans',
                   fontWeight: FontWeight.w500,
                 ),
@@ -102,14 +102,23 @@ class _InformationDataState extends State<InformationData> {
               //   controller: kecController,
               // ),
               SizedBox(height: 8),
-              TwoOptions(
-                title: "Jenis Kelamin",
-                text1: "Perempuan",
-                text2: "Laki-Laki",
-                icon1: Icons.female,
-                icon2: Icons.male,
+              // TwoOptions(
+              //   title: "Jenis Kelamin",
+              //   text1: "Perempuan",
+              //   text2: "Laki-Laki",
+              //   icon1: Icons.female,
+              //   icon2: Icons.male,
+              // ),
+              Text(
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'Open Sans',
+                  fontWeight: FontWeight.w500,
+                ),
+                "Jenis Kelamin",
               ),
-              ListInputImage()
+              GenderOptions(),
+              ListInputImage(),
             ],
           )),
       bottomNavigationBar: Container(

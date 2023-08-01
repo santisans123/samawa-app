@@ -1,5 +1,7 @@
 export 'package:samawa/pages/auth/components/options/cities.dart';
+export 'package:samawa/pages/auth/components/options/gender.dart';
 export 'package:samawa/pages/auth/components/options/provinces.dart';
+export 'package:samawa/pages/auth/components/options/submission.dart';
 export 'package:samawa/pages/auth/components/title_auth.dart';
 export 'package:samawa/pages/auth/components/under_part.dart';
 export 'package:samawa/pages/auth/components/upsite.dart';

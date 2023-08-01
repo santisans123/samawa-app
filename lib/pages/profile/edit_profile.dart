@@ -65,28 +65,29 @@ class _EditProfileState extends State<EditProfile> {
             ],
           )),
       bottomNavigationBar: Container(
-          margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
-          child: RoundedButton(
-            text: "Simpan",
-            color: sPrimaryColor,
-            press: () {
-              userProvider.putUser({
-                "name": nameController.text,
-                "bornday": tglController.text,
-                "gender": genderController.text,
-              }).then((response) {
-                print("code: ${response.statusCode}");
-                print("message: ${response.body}");
-                if (response.statusCode == 200) {
-                  // box.write('access_token', response.body['access_token']);
-                  Get.offAll(ProfilePage());
-                } else {
-                  Get.snackbar('Error', response.body.toString());
-                }
-              });
-              Get.to(ProfilePage());
-            },
-          )),
+        margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
+        child: RoundedButton(
+          text: "Simpan",
+          color: sPrimaryColor,
+          press: () {
+            userProvider.putUser({
+              "name": nameController.text,
+              "bornday": tglController.text,
+              "gender": genderController.text,
+            }).then((response) {
+              print("code: ${response.statusCode}");
+              print("message: ${response.body}");
+              if (response.statusCode == 200) {
+                // box.write('access_token', response.body['access_token']);
+                Get.offAll(ProfilePage());
+              } else {
+                Get.snackbar('Error', response.body.toString());
+              }
+            });
+            Get.to(ProfilePage());
+          },
+        ),
+      ),
     );
   }
 }

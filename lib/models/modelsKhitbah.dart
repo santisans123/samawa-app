@@ -11,7 +11,7 @@ String khitbahToJson(Khitbah data) => json.encode(data.toJson());
 class Khitbah {
   int code;
   String message;
-  Data data;
+  KhitbahData data;
 
   Khitbah({
     required this.code,
@@ -22,7 +22,7 @@ class Khitbah {
   factory Khitbah.fromJson(Map<String, dynamic> json) => Khitbah(
         code: json["code"],
         message: json["message"],
-        data: Data.fromJson(json["data"]),
+        data: KhitbahData.fromJson(json["data"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -32,7 +32,7 @@ class Khitbah {
       };
 }
 
-class Data {
+class KhitbahData {
   int khitbahId;
   String guardianName;
   String guardianPhone;
@@ -44,7 +44,7 @@ class Data {
   DateTime createdAt;
   int id;
 
-  Data({
+  KhitbahData({
     required this.khitbahId,
     required this.guardianName,
     required this.guardianPhone,
@@ -57,7 +57,7 @@ class Data {
     required this.id,
   });
 
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
+  factory KhitbahData.fromJson(Map<String, dynamic> json) => KhitbahData(
         khitbahId: json["khitbah_id"],
         guardianName: json["guardian_name"],
         guardianPhone: json["guardian_phone"],

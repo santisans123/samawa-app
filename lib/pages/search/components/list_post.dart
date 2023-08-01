@@ -1,5 +1,4 @@
 import 'package:samawa/import/main/all_import.dart';
-import 'package:samawa/import/pages/detail_person/detail_import.dart';
 
 class ListPost extends StatefulWidget {
   const ListPost(
@@ -7,12 +6,14 @@ class ListPost extends StatefulWidget {
       required this.img,
       required this.name,
       required this.location,
+      required this.gender,
       this.color})
       : super(key: key);
 
   final String img;
   final String name;
   final String location;
+  final String gender;
   final Color? color;
 
   @override
@@ -30,6 +31,7 @@ class _ListPostState extends State<ListPost> {
             name: widget.name,
             img: widget.img,
             city: widget.location,
+            gender: widget.gender,
           ));
         },
         child: Container(

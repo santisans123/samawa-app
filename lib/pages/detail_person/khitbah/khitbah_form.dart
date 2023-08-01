@@ -52,8 +52,15 @@ class _KhitbahFormState extends State<KhitbahForm> {
                 icon: Icons.timelapse,
                 controller: timeController,
               ),
-              TwoOptions(
-                  title: "Pendamping", text1: "Mandiri", text2: "Aplikasi"),
+              Text(
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'Open Sans',
+                  fontWeight: FontWeight.w500,
+                ),
+                "Pengajuan",
+              ),
+              SubmissionOptions(),
               RoundedInput(
                 textTitle: "Nama Wali",
                 hintText: "Nama Wali",
@@ -82,7 +89,7 @@ class _KhitbahFormState extends State<KhitbahForm> {
           color: sPrimaryColor,
           press: () {
             userProvider.postKhitbah({
-              'to': "1",
+              'to': "4",
               'guardianName': guardianNameController.text,
               'guardianPhone': guardianPhoneController.text,
               'notes': notesController.text,

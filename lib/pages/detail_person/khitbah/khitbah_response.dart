@@ -1,24 +1,22 @@
 import 'package:samawa/import/main/all_import.dart';
 
-class DetailPersonPage extends StatefulWidget {
-  const DetailPersonPage({
+class KhitbahResponsePage extends StatefulWidget {
+  const KhitbahResponsePage({
     Key? key,
     required this.img,
     required this.name,
     required this.city,
-    required this.gender,
   }) : super(key: key);
 
   final String img;
   final String name;
   final String city;
-  final String gender;
 
   @override
-  State<DetailPersonPage> createState() => _DetailPersonPageState();
+  State<KhitbahResponsePage> createState() => _KhitbahResponsePageState();
 }
 
-class _DetailPersonPageState extends State<DetailPersonPage> {
+class _KhitbahResponsePageState extends State<KhitbahResponsePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -139,19 +137,34 @@ class _DetailPersonPageState extends State<DetailPersonPage> {
               ),
             ],
           ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
+            child: RoundedButton(
+              text: "Terima Pengajuan Khitbah",
+              color: sPrimaryGreenColor,
+              press: () {},
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
+            child: RoundedButton(
+              text: "Tolak Pengajuan Khitbah",
+              color: sPrimaryRedColor,
+              press: () {},
+            ),
+          ),
         ],
       ),
-      bottomNavigationBar: widget.gender == "Laki-Laki"
-          ? Container(
-              margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
-              child: RoundedButton(
-                text: "Ajukan Khitbah",
-                color: sPrimaryColor,
-                press: () {
-                  Get.to(KhitbahForm());
-                },
-              ))
-          : Container(),
+      // bottomNavigationBar: Container(
+      //   margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
+      //   child: RoundedButton(
+      //     text: "Ajukan Khitbah",
+      //     color: sPrimaryColor,
+      //     press: () {
+      //       Get.to(KhitbahForm());
+      //     },
+      //   ),
+      // ),
     );
   }
 }
