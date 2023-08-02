@@ -43,25 +43,14 @@ class _EditProfileState extends State<EditProfile> {
                 icon: Icons.person_2,
                 controller: nameController,
               ),
-              TwoOptions(
-                title: "Jenis Kelamin",
-                text1: "Perempuan",
-                text2: "Laki-Laki",
-                icon1: Icons.female,
-                icon2: Icons.male,
-              ),
+              GenderOptions(),
               RoundedInput(
                 textTitle: "Tanggal Lahir",
                 hintText: "Tanggal Lahir",
                 icon: Icons.calendar_month,
                 controller: tglController,
               ),
-              ThreeOptions(
-                title: "Status Pernikahan",
-                text1: "Lajang",
-                text2: "Menikah",
-                text3: "Janda/Duda",
-              ),
+              RelationshipStatus(),
             ],
           )),
       bottomNavigationBar: Container(

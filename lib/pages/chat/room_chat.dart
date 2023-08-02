@@ -30,7 +30,8 @@ class _RoomChatPageState extends State<RoomChatPage> {
                   CircleAvatar(
                     radius: 20,
                     backgroundColor: sPrimaryWhiteColor,
-                    // child: Image.asset("assets/images/person2.jpg"),
+                    backgroundImage: NetworkImage(
+                        'https://img.herstory.co.id/articles/archive_20200701/laudya-cynthia-bella-20200701-080515.jpg'),
                   ),
                 ],
               ),
@@ -41,7 +42,7 @@ class _RoomChatPageState extends State<RoomChatPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Lorem Ipsum',
+                'Sulis Tia Wati',
                 style: TextStyle(
                   fontSize: 16,
                 ),

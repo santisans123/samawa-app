@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:samawa/import/main/all_import.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:samawa/import/main/all_import.dart';
 import 'package:samawa/service/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -94,13 +94,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                 children: [
                                   SizedBox(
                                     height: 10.0,
-                                  ),
-                                  Text(
-                                    "Email",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16.0,
-                                    ),
                                   ),
                                   RoundedInput(
                                     textTitle: "Email",

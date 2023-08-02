@@ -141,26 +141,17 @@ class _DetailPersonPageState extends State<DetailPersonPage> {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-          margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
-          child: RoundedButton(
-            text: "Ajukan Khitbah",
-            color: sPrimaryColor,
-            press: () {
-              Get.to(KhitbahForm());
-            },
-          )),
-      // bottomNavigationBar: widget.gender == "Laki-Laki"
-      //     ? Container(
-      //         margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
-      //         child: RoundedButton(
-      //           text: "Ajukan Khitbah",
-      //           color: sPrimaryColor,
-      //           press: () {
-      //             Get.to(KhitbahForm());
-      //           },
-      //         ))
-      //     : Container(),
+      bottomNavigationBar: widget.gender == "Laki-Laki"
+          ? Container(
+              margin: EdgeInsets.symmetric(horizontal: size.width * 0.08),
+              child: RoundedButton(
+                text: "Ajukan Khitbah",
+                color: sPrimaryColor,
+                press: () {
+                  Get.to(KhitbahForm());
+                },
+              ))
+          : Container(),
     );
   }
 }
